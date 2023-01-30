@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
         htmlAttrs: {
@@ -35,5 +36,11 @@ modules: [
 //   // Nuxt Robots  
     
 //    '@nuxtjs/robots', { UserAgent: "*", Disallow: "", }],
-  ]
+  ],
+  runtimeConfig: {
+    public: {
+        wpUri: process.env.WP_URI,
+    },
+},
+
 })
